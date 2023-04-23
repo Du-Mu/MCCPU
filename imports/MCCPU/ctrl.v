@@ -54,12 +54,18 @@ module ctrl(clk, rst, Zero, Op, Funct,
    wire i_addu = rtype& Funct[5]&~Funct[4]&~Funct[3]&~Funct[2]&~Funct[1]& Funct[0]; // addu
    wire i_subu = rtype& Funct[5]&~Funct[4]&~Funct[3]&~Funct[2]& Funct[1]& Funct[0]; // subu
 
+   // added by nemo 
+   wire i_nor  = rtype& Funct[5]&~Funct[4]&~Funct[3]& Funct[2]& Funct[1]& Funct[0]; // nor
+   
+
   // i format
    wire i_addi = ~Op[5]&~Op[4]& Op[3]&~Op[2]&~Op[1]&~Op[0]; // addi
    wire i_ori  = ~Op[5]&~Op[4]& Op[3]& Op[2]&~Op[1]& Op[0]; // ori
    wire i_lw   =  Op[5]&~Op[4]&~Op[3]&~Op[2]& Op[1]& Op[0]; // lw
    wire i_sw   =  Op[5]&~Op[4]& Op[3]&~Op[2]& Op[1]& Op[0]; // sw
    wire i_beq  = ~Op[5]&~Op[4]&~Op[3]& Op[2]&~Op[1]&~Op[0]; // beq
+  // added by nemo
+   wire i_bne    = ~Op[5]&~Op[4]&~Op[3]& Op[2]&~Op[1]& Op[0]; // bne
 
   // j format
    wire i_j    = ~Op[5]&~Op[4]&~Op[3]&~Op[2]& Op[1]&~Op[0];  // j
@@ -122,12 +128,12 @@ module ctrl(clk, rst, Zero, Op, Funct,
          end
          
          sexe: begin
-           ALUOp[0] = i_add | i_lw | i_sw | i_addi | i_and | i_slt | i_addu;
-           ALUOp[1] = i_sub | i_beq | i_and | i_sltu | i_subu;
-           ALUOp[2] = i_or | i_ori | i_slt | i_sltu;
+           ALUOp[0] = i_add | i_lw | i_sw | i_addi | i_and | i_slt | i_addu | i_nor;
+           ALUOp[1] = i_sub | i_beq | i_and | i_sltu | i_subu | i_bne | i_nor;
+           ALUOp[2] = i_or | i_ori | i_slt | i_sltu | i_nor;
            if (i_beq) begin
              PCSource = 2'b01; // ALUout, branch address
-             PCWrite = i_beq & Zero;
+             PCWrite = (i_beq & Zero) | (i_bne & ~Zero);
              nextstate = sif;
            end else if (i_lw || i_sw) begin
              ALUSrcB = 2'b10; // select offset
