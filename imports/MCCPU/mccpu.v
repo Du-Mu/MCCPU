@@ -18,14 +18,14 @@ module mccpu( clk, rst, instr, readdata, PC, MemWrite, adr, writedata, reg_sel, 
    wire        PCWrite;     // control signal for PC write
    wire        IRWrite;     // control signal for IR write
    wire        EXTOp;       // control signal to signed extension
-   wire [2:0]  ALUOp;       // ALU opertion
+   wire [3:0]  ALUOp;       // ALU opertion
    wire [1:0]  PCSource;    // next PC operation
    wire        IorD;         // memory access for instruction or data
 
    wire [1:0]  WDSel;       // (register) write data selection
    wire [1:0]  GPRSel;      // general purpose register selection
    
-   wire        ALUSrcA;     // ALU source for A
+   wire [1:0]  ALUSrcA;     // ALU source for A
    wire [1:0]  ALUSrcB;     // ALU source for B
    wire        Zero;        // ALU ouput zero
 
@@ -51,6 +51,7 @@ module mccpu( clk, rst, instr, readdata, PC, MemWrite, adr, writedata, reg_sel, 
    wire [31:0] ALUB;        // ALU B
    wire [31:0] data;        // data
    wire [31:0] NPC;         // NPC
+   wire [4:0] shamt;
    
    assign Op = instr[31:26];  // instruction
    assign Funct = instr[5:0]; // funct
@@ -59,6 +60,7 @@ module mccpu( clk, rst, instr, readdata, PC, MemWrite, adr, writedata, reg_sel, 
    assign rd = instr[15:11];  // rd
    assign Imm16 = instr[15:0];// 16-bit immediate
    assign IMM = instr[25:0];  // 26-bit immediate
+   assign shamt = instr[10:6];
    
    // instantiation of control unit
    ctrl U_CTRL ( 
@@ -105,10 +107,11 @@ module mccpu( clk, rst, instr, readdata, PC, MemWrite, adr, writedata, reg_sel, 
    flopr  #(32) U_AR(clk, rst, RD1, A);//A register
    
    flopr  #(32) U_BR(clk, rst, RD2, B);//B register
+   
 
    // mux for ALU A
-   mux2 #(32) U_MUX_ALU_A (
-      .d0(PC), .d1(A), .s(ALUSrcA), .y(ALUA)
+   mux4 #(32) U_MUX_ALU_A (
+      .d0(PC), .d1(A), .d2(B),.d3(32'd0), .s(ALUSrcA), .y(ALUA)
    ); 
    
    // mux for signed extension or zero extension
@@ -118,7 +121,7 @@ module mccpu( clk, rst, instr, readdata, PC, MemWrite, adr, writedata, reg_sel, 
    
    // mux for ALU B
    mux4 #(32) U_MUX_ALU_B (
-      .d0(B), .d1(4), .d2(Imm32), .d3({{14{Imm16[15]}}, Imm16, 2'b00}), 
+      .d0(B), .d1(4), .d2(Imm32), .d3({24'h0000, 3'b000 ,shamt}), 
       .s(ALUSrcB), .y(ALUB)
    ); 
 

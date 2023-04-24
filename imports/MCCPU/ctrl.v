@@ -14,9 +14,9 @@ module ctrl(clk, rst, Zero, Op, Funct,
    output reg       PCWrite;  // control signal for PC write
    output reg       IRWrite;  // control signal for IR write
    output reg       EXTOp;    // control signal to signed extension
-   output reg       ALUSrcA;  // ALU source for A, 0 - PC, 1 - ReadData1
+   output reg [1:0]  ALUSrcA;  // ALU source for A, 0 - PC, 1 - ReadData1
    output reg [1:0] ALUSrcB;  // ALU source for B, 0 - ReadData2, 1 - 4, 2 - extended immediate, 3 - branch offset
-   output reg [2:0] ALUOp;    // ALU opertion
+   output reg [3:0] ALUOp;    // ALU opertion
    output reg [1:0] PCSource; // PC source, 0- ALU, 1-ALUOut, 2-JUMP address
    output reg [1:0] GPRSel;   // general purpose register selection
    output reg [1:0] WDSel;    // (register) write data selection
@@ -56,6 +56,10 @@ module ctrl(clk, rst, Zero, Op, Funct,
 
    // added by nemo 
    wire i_nor  = rtype& Funct[5]&~Funct[4]&~Funct[3]& Funct[2]& Funct[1]& Funct[0]; // nor
+   wire i_sll  = rtype&~Funct[5]&~Funct[4]&~Funct[3]&~Funct[2]&~Funct[1]&~Funct[0]; // sll
+   wire i_srl  = rtype&~Funct[5]&~Funct[4]&~Funct[3]&~Funct[2]& Funct[1]&~Funct[0]; // srl 
+   wire i_sllv = rtype&~Funct[5]&~Funct[4]&~Funct[3]& Funct[2]&~Funct[1]&~Funct[0]; // sllv
+   wire i_srlv = rtype&~Funct[5]&~Funct[4]&~Funct[3]& Funct[2]& Funct[1]&~Funct[0]; // srlv
    
 
   // i format
@@ -66,10 +70,17 @@ module ctrl(clk, rst, Zero, Op, Funct,
    wire i_beq  = ~Op[5]&~Op[4]&~Op[3]& Op[2]&~Op[1]&~Op[0]; // beq
   // added by nemo
    wire i_bne    = ~Op[5]&~Op[4]&~Op[3]& Op[2]&~Op[1]& Op[0]; // bne
+   wire i_andi   = ~Op[5]&~Op[4]& Op[3]& Op[2]&~Op[1]&~Op[0]; // andi
+   wire i_slti   = ~Op[5]&~Op[4]& Op[3]&~Op[2]& Op[1]&~Op[0]; // slti
+   wire i_lui    = ~Op[5]&~Op[4]& Op[3]& Op[2]& Op[1]& Op[0]; // lui
+
+
 
   // j format
    wire i_j    = ~Op[5]&~Op[4]&~Op[3]&~Op[2]& Op[1]&~Op[0];  // j
    wire i_jal  = ~Op[5]&~Op[4]&~Op[3]&~Op[2]& Op[1]& Op[0];  // jal
+   wire i_jr   = rtype&~Funct[5]&~Funct[4]& Funct[3]&~Funct[2]&~Funct[1]&~Funct[0];
+   wire i_jalr = rtype&~Funct[5]&~Funct[4]& Funct[3]&~Funct[2]&~Funct[1]& Funct[0];
 
   /*************************************************/
   /******               FSM                   ******/
@@ -91,7 +102,7 @@ module ctrl(clk, rst, Zero, Op, Funct,
      PCWrite  = 0;
      IRWrite  = 0;
      EXTOp    = 1;           // signed extension
-     ALUSrcA  = 1;           // 1 - ReadData1
+     ALUSrcA  = 2'b01;           // 1 - ReadData1
      ALUSrcB  = 2'b00;       // 0 - ReadData2
      ALUOp    = 3'b001;      // ALU_ADD       3'b001
      GPRSel   = 2'b00;       // GPRSel_RD     2'b00
@@ -103,7 +114,7 @@ module ctrl(clk, rst, Zero, Op, Funct,
          sif: begin
            PCWrite = 1;
            IRWrite = 1;
-           ALUSrcA = 0;      // PC
+           ALUSrcA = 2'b00;      // PC
            ALUSrcB = 2'b01;  // 4
            nextstate = sid;
          end
@@ -121,30 +132,48 @@ module ctrl(clk, rst, Zero, Op, Funct,
              GPRSel = 2'b10;   // GPRSel_31     2'b10
              nextstate = sif;
            end else begin
-             ALUSrcA = 0;       // PC
+             ALUSrcA = 2'b00;       // PC
              ALUSrcB = 2'b11;   // branch offset
              nextstate = sexe;
            end
          end
-         
+         /*
+         `define ALU_SLL   4'b1001
+         `define ALU_SRL   4'b1010
+         `define ALU_SLLV  4'b1011
+         `define ALU_SRLV  4'b1100
+         */
          sexe: begin
-           ALUOp[0] = i_add | i_lw | i_sw | i_addi | i_and | i_slt | i_addu | i_nor;
-           ALUOp[1] = i_sub | i_beq | i_and | i_sltu | i_subu | i_bne | i_nor;
-           ALUOp[2] = i_or | i_ori | i_slt | i_sltu | i_nor;
-           if (i_beq) begin
+           ALUOp[0] = i_add | i_lw | i_sw | i_addi | i_and | i_slt | i_addu | i_nor | i_andi | i_slti | i_sll | i_sllv;
+           ALUOp[1] = i_sub | i_beq | i_and | i_sltu | i_subu | i_bne | i_nor | i_andi | i_srl | i_sllv;
+           ALUOp[2] = i_or | i_ori | i_slt | i_sltu | i_nor | i_slti | i_srlv;
+           ALUOp[3] = i_lui | i_sll | i_srl | i_sllv | i_srlv;
+           if (i_beq || i_bne) begin
              PCSource = 2'b01; // ALUout, branch address
              PCWrite = (i_beq & Zero) | (i_bne & ~Zero);
              nextstate = sif;
            end else if (i_lw || i_sw) begin
              ALUSrcB = 2'b10; // select offset
              nextstate = smem;
-           end else begin
-             if (i_addi || i_ori)
+           end else if (i_sll || i_srl) begin
+             ALUSrcB = 2'b11;
+             ALUSrcA = 2'b10;
+             nextstate = swb;
+           end else if (i_jr) begin
+             PCSource = 2'b01;
+             ALUSourceA = 2'b10;
+             PCWrite = 1'b1;
+             nextstate = sif;
+           end else if (i_jalr) begin
+             ALUSourceA = 2'b10;
+             nextstate = swb;
+           end begin
+             if (i_addi || i_ori || i_andi || i_slti || i_lui)
                ALUSrcB = 2'b10; // select immediate
-             if (i_ori)
+             if (i_ori || i_andi || i_lui)
                EXTOp = 0; // zero extension
              nextstate = swb;
-           end
+           end 
          end
 
          smem: begin
@@ -160,8 +189,14 @@ module ctrl(clk, rst, Zero, Op, Funct,
          swb: begin
            if (i_lw)
              WDSel = 2'b01;     // WDSel_FromMEM 2'b01
-           if (i_lw | i_addi | i_ori) begin
+           if (i_lw | i_addi | i_ori | i_andi | i_slti | i_lui) begin
              GPRSel = 2'b01;    // GPRSel_RT     2'b01
+           end 
+           if (i_jalr) begin
+             WDSel = 2'b10;
+             PCSource = 2'b00;
+             PCWrite = 1'b1;
+             GPRSel = 2'b10;
            end
            RegWrite = 1;
            nextstate = sif;
