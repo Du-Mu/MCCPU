@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2023 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:dist_mem_gen:8.0
-// IP Revision: 11
+// IP Revision: 12
 
 `timescale 1ns/1ps
 
@@ -67,7 +67,7 @@ input wire clk;
 input wire we;
 output wire [31 : 0] spo;
 
-  dist_mem_gen_v8_0_11 #(
+  dist_mem_gen_v8_0_12 #(
     .C_FAMILY("artix7"),
     .C_ADDR_WIDTH(7),
     .C_DEFAULT_DATA("0"),

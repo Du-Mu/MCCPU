@@ -78,7 +78,7 @@ module mccpu( clk, rst, instr, readdata, PC, MemWrite, adr, writedata, reg_sel, 
    
    // mux for PC source
    mux4 #(32) U_MUX4_PC (
-      .d0(aluresult), .d1(aluout), .d2({PC[31:28], IMM, 2'b00}), .d3(32'b0), 
+      .d0(aluresult), .d1(aluout), .d2({PC[31:28], IMM, 2'b00}), .d3(PC+{{14{IMM[15]}}, IMM[15:0], 2'b00}), 
       .s(PCSource), .y(NPC)
    );
    
@@ -111,7 +111,7 @@ module mccpu( clk, rst, instr, readdata, PC, MemWrite, adr, writedata, reg_sel, 
 
    // mux for ALU A
    mux4 #(32) U_MUX_ALU_A (
-      .d0(PC), .d1(A), .d2(B),.d3(32'd0), .s(ALUSrcA), .y(ALUA)
+      .d0(PC), .d1(A), .d2(B),.d3(NPC), .s(ALUSrcA), .y(ALUA)
    ); 
    
    // mux for signed extension or zero extension

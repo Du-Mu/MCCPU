@@ -1,10 +1,9 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2017.1 (win64) Build 1846317 Fri Apr 14 18:55:03 MDT 2017
--- Date        : Sat Oct 26 14:28:38 2019
--- Host        : PC-LIUQIN running 64-bit Service Pack 1  (build 7601)
--- Command     : write_vhdl -force -mode funcsim
---               d:/CODWork/MCCPU_SOC/MCCPU_SOC.srcs/sources_1/ip/dmem/dmem_sim_netlist.vhdl
+-- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+-- Date        : Mon Apr 24 14:37:02 2023
+-- Host        : XTZJ-20230331UV running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim D:/Code/MCCPU_SOC/MCCPU_SOC.srcs/sources_1/ip/dmem/dmem_sim_netlist.vhdl
 -- Design      : dmem
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -453,7 +452,7 @@ begin
     );
 ram_reg_0_127_0_0: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"0000000000000000000000800005810D"
+      INIT => X"00000000000000002994404C22106041"
     )
         port map (
       A0 => a(0),
@@ -470,7 +469,7 @@ ram_reg_0_127_0_0: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_10_10: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000000000040004"
+      INIT => X"00000000000000000000004800000003"
     )
         port map (
       A0 => a(0),
@@ -487,7 +486,7 @@ ram_reg_0_127_10_10: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_11_11: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000000000041834"
+      INIT => X"00000000000000003A40004801401780"
     )
         port map (
       A0 => a(0),
@@ -504,7 +503,7 @@ ram_reg_0_127_11_11: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_12_12: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"000000000000000000000007FFFC1804"
+      INIT => X"000000000000000011A00048100A02A3"
     )
         port map (
       A0 => a(0),
@@ -521,7 +520,7 @@ ram_reg_0_127_12_12: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_13_13: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000000000041CBC"
+      INIT => X"000000000000000011C0004A11C81E82"
     )
         port map (
       A0 => a(0),
@@ -538,7 +537,7 @@ ram_reg_0_127_13_13: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_14_14: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"000000000000000000000007FFFC0004"
+      INIT => X"00000000000000000420004810CF1901"
     )
         port map (
       A0 => a(0),
@@ -555,7 +554,7 @@ ram_reg_0_127_14_14: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_15_15: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000000000040004"
+      INIT => X"00000000000000000000004800000000"
     )
         port map (
       A0 => a(0),
@@ -572,7 +571,7 @@ ram_reg_0_127_15_15: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_16_16: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000006000002A46"
+      INIT => X"000000000000000034D326A803036218"
     )
         port map (
       A0 => a(0),
@@ -589,7 +588,7 @@ ram_reg_0_127_16_16: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_17_17: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"000000000000000000000017FFFF744F"
+      INIT => X"00000000000000003203274C0202630F"
     )
         port map (
       A0 => a(0),
@@ -606,7 +605,7 @@ ram_reg_0_127_17_17: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_18_18: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000007800002AF4"
+      INIT => X"000000000000000036F00002110106C0"
     )
         port map (
       A0 => a(0),
@@ -623,7 +622,7 @@ ram_reg_0_127_18_18: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_19_19: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000007FFFFC0000"
+      INIT => X"00000000000000000C200008100C4008"
     )
         port map (
       A0 => a(0),
@@ -640,7 +639,7 @@ ram_reg_0_127_19_19: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_1_1: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"000000000000000000000000000414C4"
+      INIT => X"000000000000000001100048341C0241"
     )
         port map (
       A0 => a(0),
@@ -674,7 +673,7 @@ ram_reg_0_127_20_20: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_21_21: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"000000000000000000000000000034FC"
+      INIT => X"00000000000000006E000E0002895280"
     )
         port map (
       A0 => a(0),
@@ -691,7 +690,7 @@ ram_reg_0_127_21_21: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_22_22: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000005FFFF8349C"
+      INIT => X"000000000000000051420D8C32947802"
     )
         port map (
       A0 => a(0),
@@ -708,7 +707,7 @@ ram_reg_0_127_22_22: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_23_23: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000006000001D68"
+      INIT => X"00000000000000004180000020181000"
     )
         port map (
       A0 => a(0),
@@ -725,7 +724,7 @@ ram_reg_0_127_23_23: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_24_24: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000007FFFF80000"
+      INIT => X"000000000000000054400000205C0200"
     )
         port map (
       A0 => a(0),
@@ -742,7 +741,7 @@ ram_reg_0_127_24_24: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_25_25: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000000000000000"
+      INIT => X"00000000000000004000000000000000"
     )
         port map (
       A0 => a(0),
@@ -759,7 +758,7 @@ ram_reg_0_127_25_25: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_26_26: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"0000000000000000000000600002E000"
+      INIT => X"0000000000000000000323E880000017"
     )
         port map (
       A0 => a(0),
@@ -776,7 +775,7 @@ ram_reg_0_127_26_26: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_27_27: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"0000000000000000000000E00002E000"
+      INIT => X"00000000000000000007626084000015"
     )
         port map (
       A0 => a(0),
@@ -793,7 +792,7 @@ ram_reg_0_127_27_27: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_28_28: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000000000000140"
+      INIT => X"000000000000000000000DC820104003"
     )
         port map (
       A0 => a(0),
@@ -810,7 +809,7 @@ ram_reg_0_127_28_28: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_29_29: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000005800072207"
+      INIT => X"0000000000000000001205E40200204F"
     )
         port map (
       A0 => a(0),
@@ -827,7 +826,7 @@ ram_reg_0_127_29_29: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_2_2: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"0000000000000000000000980006201F"
+      INIT => X"00000000000000003FD029E0840542C1"
     )
         port map (
       A0 => a(0),
@@ -861,7 +860,7 @@ ram_reg_0_127_30_30: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_31_31: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000006000026000"
+      INIT => X"00000000000000000003222000000014"
     )
         port map (
       A0 => a(0),
@@ -878,7 +877,7 @@ ram_reg_0_127_31_31: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_3_3: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"000000000000000000000010000404C2"
+      INIT => X"00000000000000004014014014084048"
     )
         port map (
       A0 => a(0),
@@ -895,7 +894,7 @@ ram_reg_0_127_3_3: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_4_4: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"0000000000000000000000000004A004"
+      INIT => X"00000000000000000000404080000002"
     )
         port map (
       A0 => a(0),
@@ -912,7 +911,7 @@ ram_reg_0_127_4_4: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_5_5: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"000000000000000000000087FFFC3CBC"
+      INIT => X"00000000000000002B84404890C918A2"
     )
         port map (
       A0 => a(0),
@@ -929,7 +928,7 @@ ram_reg_0_127_5_5: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_6_6: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000000000042004"
+      INIT => X"00000000000000000000004800000000"
     )
         port map (
       A0 => a(0),
@@ -946,7 +945,7 @@ ram_reg_0_127_6_6: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_7_7: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000000000042004"
+      INIT => X"00000000000000000020004800020101"
     )
         port map (
       A0 => a(0),
@@ -963,7 +962,7 @@ ram_reg_0_127_7_7: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_8_8: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000000000064004"
+      INIT => X"00000000000000000001246A01000416"
     )
         port map (
       A0 => a(0),
@@ -980,7 +979,7 @@ ram_reg_0_127_8_8: unisim.vcomponents.RAM128X1S
     );
 ram_reg_0_127_9_9: unisim.vcomponents.RAM128X1S
     generic map(
-      INIT => X"00000000000000000000000000040004"
+      INIT => X"00000000000000000000004800000000"
     )
         port map (
       A0 => a(0),
@@ -1000,7 +999,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity dmem_dist_mem_gen_v8_0_11_synth is
+entity dmem_dist_mem_gen_v8_0_12_synth is
   port (
     spo : out STD_LOGIC_VECTOR ( 31 downto 0 );
     clk : in STD_LOGIC;
@@ -1009,10 +1008,10 @@ entity dmem_dist_mem_gen_v8_0_11_synth is
     a : in STD_LOGIC_VECTOR ( 6 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dmem_dist_mem_gen_v8_0_11_synth : entity is "dist_mem_gen_v8_0_11_synth";
-end dmem_dist_mem_gen_v8_0_11_synth;
+  attribute ORIG_REF_NAME of dmem_dist_mem_gen_v8_0_12_synth : entity is "dist_mem_gen_v8_0_12_synth";
+end dmem_dist_mem_gen_v8_0_12_synth;
 
-architecture STRUCTURE of dmem_dist_mem_gen_v8_0_11_synth is
+architecture STRUCTURE of dmem_dist_mem_gen_v8_0_12_synth is
 begin
 \gen_sp_ram.spram_inst\: entity work.dmem_spram
      port map (
@@ -1027,7 +1026,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity dmem_dist_mem_gen_v8_0_11 is
+entity dmem_dist_mem_gen_v8_0_12 is
   port (
     a : in STD_LOGIC_VECTOR ( 6 downto 0 );
     d : in STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1048,74 +1047,74 @@ entity dmem_dist_mem_gen_v8_0_11 is
     qdpo : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   attribute C_ADDR_WIDTH : integer;
-  attribute C_ADDR_WIDTH of dmem_dist_mem_gen_v8_0_11 : entity is 7;
+  attribute C_ADDR_WIDTH of dmem_dist_mem_gen_v8_0_12 : entity is 7;
   attribute C_DEFAULT_DATA : string;
-  attribute C_DEFAULT_DATA of dmem_dist_mem_gen_v8_0_11 : entity is "0";
+  attribute C_DEFAULT_DATA of dmem_dist_mem_gen_v8_0_12 : entity is "0";
   attribute C_DEPTH : integer;
-  attribute C_DEPTH of dmem_dist_mem_gen_v8_0_11 : entity is 128;
+  attribute C_DEPTH of dmem_dist_mem_gen_v8_0_12 : entity is 128;
   attribute C_ELABORATION_DIR : string;
-  attribute C_ELABORATION_DIR of dmem_dist_mem_gen_v8_0_11 : entity is "./";
+  attribute C_ELABORATION_DIR of dmem_dist_mem_gen_v8_0_12 : entity is "./";
   attribute C_FAMILY : string;
-  attribute C_FAMILY of dmem_dist_mem_gen_v8_0_11 : entity is "artix7";
+  attribute C_FAMILY of dmem_dist_mem_gen_v8_0_12 : entity is "artix7";
   attribute C_HAS_CLK : integer;
-  attribute C_HAS_CLK of dmem_dist_mem_gen_v8_0_11 : entity is 1;
+  attribute C_HAS_CLK of dmem_dist_mem_gen_v8_0_12 : entity is 1;
   attribute C_HAS_D : integer;
-  attribute C_HAS_D of dmem_dist_mem_gen_v8_0_11 : entity is 1;
+  attribute C_HAS_D of dmem_dist_mem_gen_v8_0_12 : entity is 1;
   attribute C_HAS_DPO : integer;
-  attribute C_HAS_DPO of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_HAS_DPO of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_DPRA : integer;
-  attribute C_HAS_DPRA of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_HAS_DPRA of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_I_CE : integer;
-  attribute C_HAS_I_CE of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_HAS_I_CE of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QDPO : integer;
-  attribute C_HAS_QDPO of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_HAS_QDPO of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QDPO_CE : integer;
-  attribute C_HAS_QDPO_CE of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_HAS_QDPO_CE of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QDPO_CLK : integer;
-  attribute C_HAS_QDPO_CLK of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_HAS_QDPO_CLK of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QDPO_RST : integer;
-  attribute C_HAS_QDPO_RST of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_HAS_QDPO_RST of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QDPO_SRST : integer;
-  attribute C_HAS_QDPO_SRST of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_HAS_QDPO_SRST of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QSPO : integer;
-  attribute C_HAS_QSPO of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_HAS_QSPO of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QSPO_CE : integer;
-  attribute C_HAS_QSPO_CE of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_HAS_QSPO_CE of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QSPO_RST : integer;
-  attribute C_HAS_QSPO_RST of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_HAS_QSPO_RST of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QSPO_SRST : integer;
-  attribute C_HAS_QSPO_SRST of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_HAS_QSPO_SRST of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_SPO : integer;
-  attribute C_HAS_SPO of dmem_dist_mem_gen_v8_0_11 : entity is 1;
+  attribute C_HAS_SPO of dmem_dist_mem_gen_v8_0_12 : entity is 1;
   attribute C_HAS_WE : integer;
-  attribute C_HAS_WE of dmem_dist_mem_gen_v8_0_11 : entity is 1;
+  attribute C_HAS_WE of dmem_dist_mem_gen_v8_0_12 : entity is 1;
   attribute C_MEM_INIT_FILE : string;
-  attribute C_MEM_INIT_FILE of dmem_dist_mem_gen_v8_0_11 : entity is "dmem.mif";
+  attribute C_MEM_INIT_FILE of dmem_dist_mem_gen_v8_0_12 : entity is "dmem.mif";
   attribute C_MEM_TYPE : integer;
-  attribute C_MEM_TYPE of dmem_dist_mem_gen_v8_0_11 : entity is 1;
+  attribute C_MEM_TYPE of dmem_dist_mem_gen_v8_0_12 : entity is 1;
   attribute C_PARSER_TYPE : integer;
-  attribute C_PARSER_TYPE of dmem_dist_mem_gen_v8_0_11 : entity is 1;
+  attribute C_PARSER_TYPE of dmem_dist_mem_gen_v8_0_12 : entity is 1;
   attribute C_PIPELINE_STAGES : integer;
-  attribute C_PIPELINE_STAGES of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_PIPELINE_STAGES of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_QCE_JOINED : integer;
-  attribute C_QCE_JOINED of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_QCE_JOINED of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_QUALIFY_WE : integer;
-  attribute C_QUALIFY_WE of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_QUALIFY_WE of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_READ_MIF : integer;
-  attribute C_READ_MIF of dmem_dist_mem_gen_v8_0_11 : entity is 1;
+  attribute C_READ_MIF of dmem_dist_mem_gen_v8_0_12 : entity is 1;
   attribute C_REG_A_D_INPUTS : integer;
-  attribute C_REG_A_D_INPUTS of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_REG_A_D_INPUTS of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_REG_DPRA_INPUT : integer;
-  attribute C_REG_DPRA_INPUT of dmem_dist_mem_gen_v8_0_11 : entity is 0;
+  attribute C_REG_DPRA_INPUT of dmem_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_SYNC_ENABLE : integer;
-  attribute C_SYNC_ENABLE of dmem_dist_mem_gen_v8_0_11 : entity is 1;
+  attribute C_SYNC_ENABLE of dmem_dist_mem_gen_v8_0_12 : entity is 1;
   attribute C_WIDTH : integer;
-  attribute C_WIDTH of dmem_dist_mem_gen_v8_0_11 : entity is 32;
+  attribute C_WIDTH of dmem_dist_mem_gen_v8_0_12 : entity is 32;
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dmem_dist_mem_gen_v8_0_11 : entity is "dist_mem_gen_v8_0_11";
-end dmem_dist_mem_gen_v8_0_11;
+  attribute ORIG_REF_NAME of dmem_dist_mem_gen_v8_0_12 : entity is "dist_mem_gen_v8_0_12";
+end dmem_dist_mem_gen_v8_0_12;
 
-architecture STRUCTURE of dmem_dist_mem_gen_v8_0_11 is
+architecture STRUCTURE of dmem_dist_mem_gen_v8_0_12 is
   signal \<const0>\ : STD_LOGIC;
 begin
   dpo(31) <= \<const0>\;
@@ -1218,7 +1217,7 @@ GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
     );
-\synth_options.dist_mem_inst\: entity work.dmem_dist_mem_gen_v8_0_11_synth
+\synth_options.dist_mem_inst\: entity work.dmem_dist_mem_gen_v8_0_12_synth
      port map (
       a(6 downto 0) => a(6 downto 0),
       clk => clk,
@@ -1242,11 +1241,11 @@ entity dmem is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of dmem : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of dmem : entity is "dmem,dist_mem_gen_v8_0_11,{}";
+  attribute CHECK_LICENSE_TYPE of dmem : entity is "dmem,dist_mem_gen_v8_0_12,{}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of dmem : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of dmem : entity is "dist_mem_gen_v8_0_11,Vivado 2017.1";
+  attribute x_core_info of dmem : entity is "dist_mem_gen_v8_0_12,Vivado 2017.4";
 end dmem;
 
 architecture STRUCTURE of dmem is
@@ -1318,7 +1317,7 @@ architecture STRUCTURE of dmem is
   attribute c_width : integer;
   attribute c_width of U0 : label is 32;
 begin
-U0: entity work.dmem_dist_mem_gen_v8_0_11
+U0: entity work.dmem_dist_mem_gen_v8_0_12
      port map (
       a(6 downto 0) => a(6 downto 0),
       clk => clk,

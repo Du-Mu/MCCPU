@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2023 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:dist_mem_gen:8.0
--- IP Revision: 11
+-- IP Revision: 12
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY dist_mem_gen_v8_0_11;
-USE dist_mem_gen_v8_0_11.dist_mem_gen_v8_0_11;
+LIBRARY dist_mem_gen_v8_0_12;
+USE dist_mem_gen_v8_0_12.dist_mem_gen_v8_0_12;
 
 ENTITY dmem IS
   PORT (
@@ -69,7 +69,7 @@ END dmem;
 ARCHITECTURE dmem_arch OF dmem IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF dmem_arch: ARCHITECTURE IS "yes";
-  COMPONENT dist_mem_gen_v8_0_11 IS
+  COMPONENT dist_mem_gen_v8_0_12 IS
     GENERIC (
       C_FAMILY : STRING;
       C_ADDR_WIDTH : INTEGER;
@@ -123,16 +123,16 @@ ARCHITECTURE dmem_arch OF dmem IS
       qspo : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       qdpo : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
     );
-  END COMPONENT dist_mem_gen_v8_0_11;
+  END COMPONENT dist_mem_gen_v8_0_12;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF dmem_arch: ARCHITECTURE IS "dist_mem_gen_v8_0_11,Vivado 2017.1";
+  ATTRIBUTE X_CORE_INFO OF dmem_arch: ARCHITECTURE IS "dist_mem_gen_v8_0_12,Vivado 2017.4";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
-  ATTRIBUTE CHECK_LICENSE_TYPE OF dmem_arch : ARCHITECTURE IS "dmem,dist_mem_gen_v8_0_11,{}";
+  ATTRIBUTE CHECK_LICENSE_TYPE OF dmem_arch : ARCHITECTURE IS "dmem,dist_mem_gen_v8_0_12,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF dmem_arch: ARCHITECTURE IS "dmem,dist_mem_gen_v8_0_11,{x_ipProduct=Vivado 2017.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=dist_mem_gen,x_ipVersion=8.0,x_ipCoreRevision=11,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=artix7,C_ADDR_WIDTH=7,C_DEFAULT_DATA=0,C_DEPTH=128,C_HAS_CLK=1,C_HAS_D=1,C_HAS_DPO=0,C_HAS_DPRA=0,C_HAS_I_CE=0,C_HAS_QDPO=0,C_HAS_QDPO_CE=0,C_HAS_QDPO_CLK=0,C_HAS_QDPO_RST=0,C_HAS_QDPO_SRST=0,C_HAS_QSPO=0,C_HAS_QSPO_CE=0,C_HAS_QSPO_RST=0,C_HAS_QSPO_SRST=0,C_HAS_SPO=1,C_HAS_WE=1,C_MEM_INIT_FILE=dmem." & 
+  ATTRIBUTE CORE_GENERATION_INFO OF dmem_arch: ARCHITECTURE IS "dmem,dist_mem_gen_v8_0_12,{x_ipProduct=Vivado 2017.4,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=dist_mem_gen,x_ipVersion=8.0,x_ipCoreRevision=12,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=artix7,C_ADDR_WIDTH=7,C_DEFAULT_DATA=0,C_DEPTH=128,C_HAS_CLK=1,C_HAS_D=1,C_HAS_DPO=0,C_HAS_DPRA=0,C_HAS_I_CE=0,C_HAS_QDPO=0,C_HAS_QDPO_CE=0,C_HAS_QDPO_CLK=0,C_HAS_QDPO_RST=0,C_HAS_QDPO_SRST=0,C_HAS_QSPO=0,C_HAS_QSPO_CE=0,C_HAS_QSPO_RST=0,C_HAS_QSPO_SRST=0,C_HAS_SPO=1,C_HAS_WE=1,C_MEM_INIT_FILE=dmem." & 
 "mif,C_ELABORATION_DIR=./,C_MEM_TYPE=1,C_PIPELINE_STAGES=0,C_QCE_JOINED=0,C_QUALIFY_WE=0,C_READ_MIF=1,C_REG_A_D_INPUTS=0,C_REG_DPRA_INPUT=0,C_SYNC_ENABLE=1,C_WIDTH=32,C_PARSER_TYPE=1}";
 BEGIN
-  U0 : dist_mem_gen_v8_0_11
+  U0 : dist_mem_gen_v8_0_12
     GENERIC MAP (
       C_FAMILY => "artix7",
       C_ADDR_WIDTH => 7,

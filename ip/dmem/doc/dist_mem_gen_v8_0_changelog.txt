@@ -1,3 +1,15 @@
+2017.4:
+ * Version 8.0 (Rev. 12)
+ * No changes
+
+2017.3:
+ * Version 8.0 (Rev. 12)
+ * General: Internal device family change, no functional changes
+
+2017.2:
+ * Version 8.0 (Rev. 11)
+ * No changes
+
 2017.1:
  * Version 8.0 (Rev. 11)
  * No changes

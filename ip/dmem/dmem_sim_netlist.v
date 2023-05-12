@@ -1,10 +1,9 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2017.1 (win64) Build 1846317 Fri Apr 14 18:55:03 MDT 2017
-// Date        : Sat Oct 26 14:28:38 2019
-// Host        : PC-LIUQIN running 64-bit Service Pack 1  (build 7601)
-// Command     : write_verilog -force -mode funcsim
-//               d:/CODWork/MCCPU_SOC/MCCPU_SOC.srcs/sources_1/ip/dmem/dmem_sim_netlist.v
+// Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+// Date        : Mon Apr 24 14:37:02 2023
+// Host        : XTZJ-20230331UV running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim D:/Code/MCCPU_SOC/MCCPU_SOC.srcs/sources_1/ip/dmem/dmem_sim_netlist.v
 // Design      : dmem
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,7 +11,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "dmem,dist_mem_gen_v8_0_11,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "dist_mem_gen_v8_0_11,Vivado 2017.1" *) 
+(* CHECK_LICENSE_TYPE = "dmem,dist_mem_gen_v8_0_12,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "dist_mem_gen_v8_0_12,Vivado 2017.4" *) 
 (* NotValidForBitStream *)
 module dmem
    (a,
@@ -67,7 +66,7 @@ module dmem
   (* c_reg_a_d_inputs = "0" *) 
   (* c_sync_enable = "1" *) 
   (* c_width = "32" *) 
-  dmem_dist_mem_gen_v8_0_11 U0
+  dmem_dist_mem_gen_v8_0_12 U0
        (.a(a),
         .clk(clk),
         .d(d),
@@ -97,8 +96,8 @@ endmodule
 (* C_MEM_INIT_FILE = "dmem.mif" *) (* C_MEM_TYPE = "1" *) (* C_PARSER_TYPE = "1" *) 
 (* C_PIPELINE_STAGES = "0" *) (* C_QCE_JOINED = "0" *) (* C_QUALIFY_WE = "0" *) 
 (* C_READ_MIF = "1" *) (* C_REG_A_D_INPUTS = "0" *) (* C_REG_DPRA_INPUT = "0" *) 
-(* C_SYNC_ENABLE = "1" *) (* C_WIDTH = "32" *) (* ORIG_REF_NAME = "dist_mem_gen_v8_0_11" *) 
-module dmem_dist_mem_gen_v8_0_11
+(* C_SYNC_ENABLE = "1" *) (* C_WIDTH = "32" *) (* ORIG_REF_NAME = "dist_mem_gen_v8_0_12" *) 
+module dmem_dist_mem_gen_v8_0_12
    (a,
     d,
     dpra,
@@ -239,7 +238,7 @@ module dmem_dist_mem_gen_v8_0_11
   assign qspo[0] = \<const0> ;
   GND GND
        (.G(\<const0> ));
-  dmem_dist_mem_gen_v8_0_11_synth \synth_options.dist_mem_inst 
+  dmem_dist_mem_gen_v8_0_12_synth \synth_options.dist_mem_inst 
        (.a(a),
         .clk(clk),
         .d(d),
@@ -247,8 +246,8 @@ module dmem_dist_mem_gen_v8_0_11
         .we(we));
 endmodule
 
-(* ORIG_REF_NAME = "dist_mem_gen_v8_0_11_synth" *) 
-module dmem_dist_mem_gen_v8_0_11_synth
+(* ORIG_REF_NAME = "dist_mem_gen_v8_0_12_synth" *) 
+module dmem_dist_mem_gen_v8_0_12_synth
    (spo,
     clk,
     d,
@@ -615,7 +614,7 @@ module dmem_spram
         .Q(qspo_int[9]),
         .R(1'b0));
   RAM128X1S #(
-    .INIT(128'h0000000000000000000000800005810D)) 
+    .INIT(128'h00000000000000002994404C22106041)) 
     ram_reg_0_127_0_0
        (.A0(a[0]),
         .A1(a[1]),
@@ -629,7 +628,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000000000040004)) 
+    .INIT(128'h00000000000000000000004800000003)) 
     ram_reg_0_127_10_10
        (.A0(a[0]),
         .A1(a[1]),
@@ -643,7 +642,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000000000041834)) 
+    .INIT(128'h00000000000000003A40004801401780)) 
     ram_reg_0_127_11_11
        (.A0(a[0]),
         .A1(a[1]),
@@ -657,7 +656,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h000000000000000000000007FFFC1804)) 
+    .INIT(128'h000000000000000011A00048100A02A3)) 
     ram_reg_0_127_12_12
        (.A0(a[0]),
         .A1(a[1]),
@@ -671,7 +670,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000000000041CBC)) 
+    .INIT(128'h000000000000000011C0004A11C81E82)) 
     ram_reg_0_127_13_13
        (.A0(a[0]),
         .A1(a[1]),
@@ -685,7 +684,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h000000000000000000000007FFFC0004)) 
+    .INIT(128'h00000000000000000420004810CF1901)) 
     ram_reg_0_127_14_14
        (.A0(a[0]),
         .A1(a[1]),
@@ -699,7 +698,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000000000040004)) 
+    .INIT(128'h00000000000000000000004800000000)) 
     ram_reg_0_127_15_15
        (.A0(a[0]),
         .A1(a[1]),
@@ -713,7 +712,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000006000002A46)) 
+    .INIT(128'h000000000000000034D326A803036218)) 
     ram_reg_0_127_16_16
        (.A0(a[0]),
         .A1(a[1]),
@@ -727,7 +726,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h000000000000000000000017FFFF744F)) 
+    .INIT(128'h00000000000000003203274C0202630F)) 
     ram_reg_0_127_17_17
        (.A0(a[0]),
         .A1(a[1]),
@@ -741,7 +740,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000007800002AF4)) 
+    .INIT(128'h000000000000000036F00002110106C0)) 
     ram_reg_0_127_18_18
        (.A0(a[0]),
         .A1(a[1]),
@@ -755,7 +754,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000007FFFFC0000)) 
+    .INIT(128'h00000000000000000C200008100C4008)) 
     ram_reg_0_127_19_19
        (.A0(a[0]),
         .A1(a[1]),
@@ -769,7 +768,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h000000000000000000000000000414C4)) 
+    .INIT(128'h000000000000000001100048341C0241)) 
     ram_reg_0_127_1_1
        (.A0(a[0]),
         .A1(a[1]),
@@ -797,7 +796,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h000000000000000000000000000034FC)) 
+    .INIT(128'h00000000000000006E000E0002895280)) 
     ram_reg_0_127_21_21
        (.A0(a[0]),
         .A1(a[1]),
@@ -811,7 +810,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000005FFFF8349C)) 
+    .INIT(128'h000000000000000051420D8C32947802)) 
     ram_reg_0_127_22_22
        (.A0(a[0]),
         .A1(a[1]),
@@ -825,7 +824,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000006000001D68)) 
+    .INIT(128'h00000000000000004180000020181000)) 
     ram_reg_0_127_23_23
        (.A0(a[0]),
         .A1(a[1]),
@@ -839,7 +838,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000007FFFF80000)) 
+    .INIT(128'h000000000000000054400000205C0200)) 
     ram_reg_0_127_24_24
        (.A0(a[0]),
         .A1(a[1]),
@@ -853,7 +852,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000000000000000)) 
+    .INIT(128'h00000000000000004000000000000000)) 
     ram_reg_0_127_25_25
        (.A0(a[0]),
         .A1(a[1]),
@@ -867,7 +866,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h0000000000000000000000600002E000)) 
+    .INIT(128'h0000000000000000000323E880000017)) 
     ram_reg_0_127_26_26
        (.A0(a[0]),
         .A1(a[1]),
@@ -881,7 +880,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h0000000000000000000000E00002E000)) 
+    .INIT(128'h00000000000000000007626084000015)) 
     ram_reg_0_127_27_27
        (.A0(a[0]),
         .A1(a[1]),
@@ -895,7 +894,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000000000000140)) 
+    .INIT(128'h000000000000000000000DC820104003)) 
     ram_reg_0_127_28_28
        (.A0(a[0]),
         .A1(a[1]),
@@ -909,7 +908,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000005800072207)) 
+    .INIT(128'h0000000000000000001205E40200204F)) 
     ram_reg_0_127_29_29
        (.A0(a[0]),
         .A1(a[1]),
@@ -923,7 +922,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h0000000000000000000000980006201F)) 
+    .INIT(128'h00000000000000003FD029E0840542C1)) 
     ram_reg_0_127_2_2
        (.A0(a[0]),
         .A1(a[1]),
@@ -951,7 +950,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000006000026000)) 
+    .INIT(128'h00000000000000000003222000000014)) 
     ram_reg_0_127_31_31
        (.A0(a[0]),
         .A1(a[1]),
@@ -965,7 +964,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h000000000000000000000010000404C2)) 
+    .INIT(128'h00000000000000004014014014084048)) 
     ram_reg_0_127_3_3
        (.A0(a[0]),
         .A1(a[1]),
@@ -979,7 +978,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h0000000000000000000000000004A004)) 
+    .INIT(128'h00000000000000000000404080000002)) 
     ram_reg_0_127_4_4
        (.A0(a[0]),
         .A1(a[1]),
@@ -993,7 +992,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h000000000000000000000087FFFC3CBC)) 
+    .INIT(128'h00000000000000002B84404890C918A2)) 
     ram_reg_0_127_5_5
        (.A0(a[0]),
         .A1(a[1]),
@@ -1007,7 +1006,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000000000042004)) 
+    .INIT(128'h00000000000000000000004800000000)) 
     ram_reg_0_127_6_6
        (.A0(a[0]),
         .A1(a[1]),
@@ -1021,7 +1020,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000000000042004)) 
+    .INIT(128'h00000000000000000020004800020101)) 
     ram_reg_0_127_7_7
        (.A0(a[0]),
         .A1(a[1]),
@@ -1035,7 +1034,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000000000064004)) 
+    .INIT(128'h00000000000000000001246A01000416)) 
     ram_reg_0_127_8_8
        (.A0(a[0]),
         .A1(a[1]),
@@ -1049,7 +1048,7 @@ module dmem_spram
         .WCLK(clk),
         .WE(we));
   RAM128X1S #(
-    .INIT(128'h00000000000000000000000000040004)) 
+    .INIT(128'h00000000000000000000004800000000)) 
     ram_reg_0_127_9_9
        (.A0(a[0]),
         .A1(a[1]),

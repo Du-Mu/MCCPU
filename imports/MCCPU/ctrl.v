@@ -149,7 +149,7 @@ module ctrl(clk, rst, Zero, Op, Funct,
            ALUOp[2] = i_or | i_ori | i_slt | i_sltu | i_nor | i_slti | i_srlv;
            ALUOp[3] = i_lui | i_sll | i_srl | i_sllv | i_srlv;
            if (i_beq || i_bne) begin
-             PCSource = 2'b01; // ALUout, branch address
+             PCSource = 2'b11; 
              PCWrite = (i_beq & Zero) | (i_bne & ~Zero);
              nextstate = sif;
            end else if (i_lw || i_sw) begin
@@ -161,13 +161,13 @@ module ctrl(clk, rst, Zero, Op, Funct,
              nextstate = swb;
            end else if (i_jr) begin
              PCSource = 2'b01;
-             ALUSourceA = 2'b10;
-             PCWrite = 1'b1;
-             nextstate = sif;
-           end else if (i_jalr) begin
-             ALUSourceA = 2'b10;
+             ALUSrcA = 2'b01;
+             PCWrite = 1;
              nextstate = swb;
-           end begin
+           end else if (i_jalr) begin
+             ALUSrcA = 2'b10;
+             nextstate = swb;
+           end else begin
              if (i_addi || i_ori || i_andi || i_slti || i_lui)
                ALUSrcB = 2'b10; // select immediate
              if (i_ori || i_andi || i_lui)
@@ -200,6 +200,10 @@ module ctrl(clk, rst, Zero, Op, Funct,
            end
            RegWrite = 1;
            nextstate = sif;
+           if (i_jr) begin
+            PCWrite = 1;
+            RegWrite = 0;
+          end
          end
 
          default: begin
